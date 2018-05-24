@@ -1,0 +1,128 @@
+#backdrop {
+    background-color: lightgoldenrodyellow;
+    
+}
+
+.start-game {
+    position: center;
+}
+/* 
+#main-board {
+    border-style: solid;
+    border-width: thin;
+} */
+
+div {
+    background-color: pink;
+}
+
+
+.score {
+    background-color: lightseagreen;
+    height: 30px;
+    font-size: 25px;
+    font-weight: bold;
+    border-style: solid;
+   
+    border-color: black;
+    
+
+}
+
+.timer {
+    width: 100%;
+    height: 25px;
+    background-color: rgb(139, 139, 214); 
+}
+
+.score-span {
+    border: 3px;
+    border-width: 5em;
+    border-color: black;
+}
+
+#score-bar{
+    border: 3px;
+    border-color: black;
+}
+
+.img-1 {
+    float: top, left;
+    animation-name: slide;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-delay: 0.2ms;
+    animation-direction: reverse;
+    animation-timing-function: linear;
+}
+
+.player-words {
+    height: 20px;
+    font-weight: bold; 
+    border-style: solid;
+    border-width: thin;
+}
+
+.gif-1 {
+    animation-delay: 18s;
+    height: 300px;
+    background-image: url(/Users/alexanderteodor-mazilu/code/Web-Development-Coursework/labs/Week-7/images/rick-made-of-his-own-words.gif); 
+} 
+
+  .gif-2 {
+    animation-delay: 18s;
+    background-image: url(/Users/alexanderteodor-mazilu/code/Web-Development-Coursework/labs/Week-7/images/rickyt-giphy.gif); 
+    background-repeat: no-repeat;
+    align-content: right;
+    height: 200px;
+} 
+
+
+
+    
+
+/* [animation-delay] [animation-iteration-count] [animation-direction]
+[animation-fill-mode] [animation-play-state] */
+
+
+
+/* main game div screen */
+#main-game-board {
+    background-color: lightgrey;
+     /* background-image: url(/Users/alexanderteodor-mazilu/code/Web-Development-Coursework/labs/Week-7/images/rickyknowstherules.jpeg);  */
+    background-repeat: no-repeat; 
+    background-position: center;
+    width: 1100px;
+    height: 500px;
+    border-style: thick;
+    border-width: solid;
+    font-size: 6em;
+}
+
+
+
+
+/* div class in main game div containing actual lyrics */
+.word-bar {
+
+    border-style: solid;
+    border-width: thin;
+    width: 1100px;
+    height: 40px;
+    background-color: lightgreen;
+    font-weight: bold;
+
+}
+
+.bg {
+    background-color: aquamarine;
+}
+
+#words {
+    position: inline; 
+    border-style: solid; 
+    padding: 0 0 100 0;
+    margin: 0 0 100 0; 
+    background-color: lightblue;
+    height: 50px;
+}
