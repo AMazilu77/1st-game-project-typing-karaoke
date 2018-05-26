@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="Game-index.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+ <body id="backdrop">  
+   <!-- BACKDROP - this is background for changing colors as the mouse moves, add event listener so x y movements of mouse change background colors --> 
+   <title>Rick Astley - Never Gonna Give You Up</title>
+   
+   <!-- <audio src="/Sounds-For-Game/Rick Astley - Never Gonna Give You Up (1).mp3" autoplay> MUSIC  -->
+  
+ 
+
+    <div class="imgclass"> 
+        <!-- onclick="introMusic()" -->
+        <button id="accepted"> Accept Challenge </button>
+        <audio>
+          <source src="../Sounds-For-Game/SF2 intro.mp3"  type="audio/mpeg">
+                     If you're reading this, audio isn't supported. 
+         </audio>
+          
+        <h1> Rick Astley has challenged you to a type-off!</h1>
+            <h2> -Type the lyrics faster and more accurately than your oppenent to win!-  </h2>
+           
+           
+        <img class="img-1" src="https://www.amigosbarcelona.com/imagenes/act31002505.jpg">
+        
+    </div>
+
+    <div class="gif-1"> Never Give up!</div>
+
+
+    
+
+    <div class="score"> 
+            <span class="score-span" id="score-bar"> 
+                Player 1 score is: <span id="score"> 0 </span>
+
+            </span> 
+        </div>   
+
+
+
+
+
+<div id="main-game-board">  </div>
+
+  
+
+
+    
+              
+            <button id="start-button" onclick="startGame()">  Ready?  </button>
+              <div id="player">
+              <audio>
+               <source src="/Users/alexanderteodor-mazilu/code/Web-Development-Coursework/labs/Week-7/Game-Project/Sounds-For-Game/Rick Astley - Never Gonna Give You Up (1).mp3"  type="audio/mpeg">
+                          If you're reading this, audio isn't supported. 
+              </audio>
+          </div>
+          <div class="player-words"> Player 1 lyrics: <p id="words"> </p>
+            <textarea id="thebox" type="text" value=" TYPE HERE" method="get" >   </textarea>
+           
+          
+          <div class ="timespace"> Time left:  <p class="timer">  </p>  </div>
+                  
+                
+                
+                    
+                  
+                    
+                
+
+               
+                
+                <!-- <script> $("input")
+                .keypress(function()) {
+                  var value = $(this).val();
+                  $("p").text( value ); 
+                })
+                .keypress(); 
+
+                </script>  -->
+                </div>  
+              
+    <audio>
+      <source src="">
+    </audio>
+                
+
+    <script src="Game-index.js"></script>
+  </body>
+ 
+</html>
