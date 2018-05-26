@@ -9,7 +9,7 @@ window.onload = function(){
 
 
   
-  var span = document.querySelector("main-game-board")
+  var span = document.querySelector("main-game-board");
   var timer = document.querySelector('.timer');
   var button = document.querySelector(".start-game");
   var score = document.querySelector("#score-bar");
@@ -19,29 +19,15 @@ window.onload = function(){
   var points = 0;
   var seconds = 250;
   var catchPhrase = " You lOSE!";
-  var myMusic = new sound("/Users/alexanderteodor-mazilu/code/Web-Development-Coursework/labs/Week-7/Sounds-For-Game/Rick Astley - Never Gonna Give You Up (1).mp3 ");
-  var backdrop = document.querySelector("#backdrop")
-  var intro = new sound("/Users/alexanderteodor-mazilu/code/Web-Development-Coursework/labs/Week-7/Sounds-For-Game/SF2 intro.mp3");
+  var myMusic = new sound("/Sounds-For-Game/Rick Astley - Never Gonna Give You Up (1).mp3 ");
+  var backdrop = document.querySelector("#backdrop");
+  
 
+let introSong = document.querySelector('audio');
 
+function introMusic() {
 
-
-function introMusic(intro) {
-  this.sound = document.createElement("audio");
-  this.sound.src = "/Users/alexanderteodor-mazilu/code/Web-Development-Coursework/labs/Week-7/Sounds-For-Game/SF2 intro.mp3"
-  this.sound.setAttribute("preload", "auto");
-  this.sound.setAttribute("controls", "none");
-  this.sound.style.display = "none";
-  document.body.appendChild(this.sound);
-    this.play = function(){
-        this.sound.play();
-    };
-    this.stop = function(){
-        this.sound.pause();
-    };
-
-
-};
+}
 
 
   function sound(myMusic) {
@@ -61,10 +47,10 @@ function introMusic(intro) {
 
 document.getElementById("accepted").onclick = function() {
  
-  intro.play();
-  intro.sound.loop = false; 
-  alert(" Clear thy mind! prepare thy fingers! click ready when you are ready!")
-}
+ 
+  introSong.play();
+  alert(" Clear thy mind! prepare thy fingers! Scroll down and click ready when you are ready to face Rick!!");
+};
 
 
 
@@ -79,6 +65,7 @@ document.getElementById("accepted").onclick = function() {
       startGame();
       // this.sound.setAttribute("preload");
       setTimeout(sound(), 18000); 
+      introSong.pause();
       myMusic.play();
        myMusic.sound.loop = false; 
        timer.innerHTML = seconds;
@@ -106,7 +93,7 @@ document.getElementById("accepted").onclick = function() {
         lyrics.appendChild(span);
      }
      spans = document.querySelectorAll(".span");
-   };
+   }
 
 
 
@@ -121,22 +108,22 @@ document.getElementById("accepted").onclick = function() {
 
 
 
-   function spellChek(){
-    let textENTER = userTypedArray.value;
-    let checker = lyrics.substring(0,textENTER.length);
-       if(textENTER.trim() == lyrics.trim()){  //trim to remove all whites spaces in order to match characters
+  //  function spellChek(){
+  //   let textENTER = userTypedArray.value;
+  //   let checker = lyrics.substring(0,textENTER.length);
+  //      if(textENTER.trim() == lyrics.trim()){  //trim to remove all whites spaces in order to match characters
            
-          clearInterval(interval);
-          textArea.style.borderColor= "orange";
-       } else {
-          if(textENTER == checker){
-              textArea.style.borderColor= "lightgreen";
-          } else{
-              textArea.style.borderColor= "red";
-          }
-       }
+  //         clearInterval(interval);
+  //         textArea.style.borderColor= "orange";
+  //      } else {
+  //         if(textENTER == checker){
+  //             textArea.style.borderColor= "lightgreen";
+  //         } else{
+  //             textArea.style.borderColor= "red";
+  //         }
+  //      }
   
-}
+// }
 
 
 
@@ -150,23 +137,23 @@ document.getElementById("accepted").onclick = function() {
 
 
 
-  	 function countdown() {
-     		points = 0;
-     		var timer = setInterval(function(){
-     			button.disabled = true;
-        		seconds--;
-        		timer.innerHTML = seconds;
-        		if (seconds === 0) {
-        			alert("Game over! Your score is " + points);
-        			words.innerHTML = " ";
-        			button.disabled = false;
-        			clearInterval(timer);
+  	//  function countdown() {
+    //  		points = 0;
+    //  		var timer = setInterval(function(){
+    //  			button.disabled = true;
+    //     		seconds--;
+    //     		timer.innerHTML = seconds;
+    //     		if (seconds === 0) {
+    //     			alert("Game over! Your score is " + points);
+    //     			words.innerHTML = " ";
+    //     			button.disabled = false;
+    //     			clearInterval(timer);
         	
         			
-        			button.disabled = false;	
-        		}
-     		}, 1000);
-        }
+    //     			button.disabled = false;	
+    //     		}
+    //  		}, 1000);
+    //     }
        
 
   
@@ -183,9 +170,9 @@ document.getElementById("accepted").onclick = function() {
 
 
      function printLyrics(index, lyrics){
-     console.log('index ', index);  
-        console.log('lyrics ', lyrics);
-       console.log('lyrics on index', lyrics[index]);
+    //  console.log('index ', index);  
+    //     console.log('lyrics ', lyrics);
+    //    console.log('lyrics on index', lyrics[index]);
        document.getElementById("main-game-board").innerHTML = lyrics; 
     }    
 
@@ -204,7 +191,7 @@ document.getElementById("accepted").onclick = function() {
         // console.log(i)
         //var timer = setTimeout(startGame, 18000)
             document.getElementById("main-game-board").innerHTML = lyrics[0].text;
-            setTimeout(()=>printLyrics(i, lyrics[i].text),   i * 3500);
+            setTimeout(()=>printLyrics(i, lyrics[i].text),   i * 10000);
             
 
              var span = document.createElement("span");
@@ -229,74 +216,6 @@ document.getElementById("accepted").onclick = function() {
 
 
 
-// TRYING TO DISABLE PROBLEMATIC BUTTONS, CONSIDER ADDEVENTLISTENER ONKEYPRESS which only registers buttons that display characters
-
-
-    window.onkeydown = function (event) {
-      if (event.keyCode === 32) {
-          event.preventDefault();
-      if (event.keyCode === 13 ) {
-          event.preventDefault();
-          key.disabled;
-          keyPress.disabled;
-      if (event.keycode === 16);
-          event.preventDefault();
-          event.disabled();
-          event.keyPress.disabled;
-      }
-         
-      }
-  };
-
-    
-  //   window.addEventListener("keydown", function (event) {
-  //     if (event.defaultPrevented) {
-  //       return; // Should do nothing if the default action has been cancelled
-  //     }
-    
-  //     var handled = false;
-  //     if (event. !== undefined) {
-  //       // Handle the event with KeyboardEvent.key and set handled true.
-  //     } else if (event.Space !== undefined) {
-  //       // Handle the event with KeyboardEvent.keyIdentifier and set handled true.
-  //     } else if (event.Space !== undefined) {
-  //       // Handle the event with KeyboardEvent.keyCode and set handled true.
-  //     }
-    
-  //     if (handled) {
-  //       // Suppress "double action" if event handled
-  //       event.preventDefault();
-  //     }
-  //   }, true);
-  
-   
-
-
-  //   function DisabledKey1(e) { 
-  //     var e = window.event||e; // Handle browser compatibility
-  //     var keyID = e.space;
-  //     //space pressed
-  //     if (keyID == 32) {
-  //         e.preventDefault(); // Prevent the default action
-  //         // anotherFunction();
-  //     }
-  // }
-   
-   
-    // function DisableKeys(  : "Space" )
-    // {
-    //    if( Event.current.keyCode == " "  ( Event.current.type == EventType.KeyUp || Event.current.type == EventType.KeyDown ) )
-    //    {
-    //       Event.current.Use();
-    //    }
-    // }
-  
-    // function OnGUI()
-    // {
-    //    DisableKeys( KeyCode.Space );
-    // }
- 
-  
 
 
 
@@ -363,51 +282,26 @@ document.getElementById("accepted").onclick = function() {
 
 
 
-// String.fromCharCode() function is used to create a string from the given sequence of UTF-16 code units. The syntax of this function is as follows:
-  // The event.which property returns which keyboard key or mouse button was pressed for the event.
-       function playerOneInput(X) {
-         userTypedArray  = String.fromCharCode(X.which); 
-         for (var Z = 0; Z < spans.length; Z++) { 
-          if (spans[Z].innerHTML === typed) { 
-          if (spans[Z].classList.contains("bg")) // if it already has class with the bacground color then check the next one
-            continue; 
-           } else if (spans[Z].classList.contains("bg") === false && spans[Z-1] === undefined  || spans[Z-1].classList.contains("bg") !== false) {  // if it doesent have class, if it is not first letter or if the letter before it doesent have class (done to avoid marking the letters who are not in order for being checked, for example if you have two "A"s so to avoid marking both of them if the first one is at the index 0 and second at index 5 for example)
-             spans[Z].classList.add("bg");
-             break; 
-         }  
-       }
-     }
+
   
 
   
   
-//   function myWordsFunction() {
-//       var x = document.createElement("INPUT");
-//       x.setAttribute("type", "text");
-//       x.setAttribute("value", userType);
-//       document.body.appendChild(x);
-//   }
-  
-  // var wordChecker = 0; 
-  // for ( var B = 0; B < spans.length; B++ ) { //checks to see if lyrics are typed
-  // if (spans[B].className === "span bg") {
-  //   checker++;
-  // }
-  // if(checker === spans.length) { 
-  //   points++;
-  //   score.innerHTML = points; 
-  //    }
-  //   }
+
 
   
 
 //WORKING KEY DETECTION, PROBLEM WITH UNWANTED KEYS AND ENTER KEY RESTARTING THE LOOP
- document.onkeydown = function(event) {
+ document.onkeypress = function(event) {
    // console.log("KEYDOWN");
    console.log(event);
    var keyPress = event.key; 
    var keyCode = event.keycode;
    var typedWords = document.getElementById("words").innerHTML += keyPress;
+   userTypedArray.push(typedWords);
+   
+   
+   
    function inputOn(event)
   {
 
@@ -415,34 +309,159 @@ document.getElementById("accepted").onclick = function() {
      {
         event.preventDefault();
      }
+
+     if(event.keycode == 32){
+       event.preventDefault(); 
+       
+     } 
+     
+     if(event.keycode == 13) {
+       event.preventDefault(); 
+     }
    
    }
  
-   userTypedArray.push(typedWords); 
- 
-   console.log(typedWords);
-   for(var M = 0; M < typedWords.length; M++) {
-     if ( userTypedArray[0] === lyrics[0]);
-     score++;
-    
-   }
+
    points++;
     var typedWordsArray = document.getElementById('words');
     typedWords.innerHTML = keyPress; 
  };
 
-var bDrop = document.getElementById("backdrop");
 
-bDrop.addEventListener("mousemove", eventRunner());  
+var finalFUCKINGLIST = [];
+var input;
+function setup() {
+  document.getElementById("thebox");
+  input = createInput();
+  input.changed(newText);
+  function enterEvent(e) {
+    if(13 === event.which) {
+      event.preventDefault();
+      finalFUCKINGLIST.push=document.getElementById("thebox").value;
+      input.innerHTML=finalFUCKINGLIST.join;
+      document.getElementById('thebox').currentTarget.value = " ";
+    }
 
-function eventRunner() {
-   Document.body.style.backGroundColor = "rgb(e.offsetX+, e.offsetY+, 40)";
   }
+ 
+}
+
+function newText() {
+
+}
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function chex(){ 
+// finalChecker = document.getElementById("thebox");
+// LASTARRAY = [];
+// if(onkeypress == 13){
+//   finalChecker.push(LASTARRAY);
+// }
+// console.log(finalChecker);
+// }
+
+
+
+// var bDrop = document.getElementById("backdrop");
+
+// bDrop.addEventListener("mousemove", eventRunner());  
+
+// function eventRunner() {
+//    Document.body.style.backGroundColor = "rgb(e.offsetX+, e.offsetY+, 40)";
+//   }
+
+
+
+
+
+// TRYING TO DISABLE PROBLEMATIC BUTTONS, CONSIDER ADDEVENTLISTENER ONKEYPRESS which only registers buttons that display characters
+
+
+  //   window.onkeydown = function (event) {
+  //     if (event.keyCode === 32) {
+  //         event.preventDefault();
+  //     if (event.keyCode === 13 ) {
+  //         event.preventDefault();
+  //         key.disabled;
+  //         keyPress.disabled;
+  //     if (event.keycode === 16);
+  //         event.preventDefault();
+  //         event.disabled();
+  //         event.keyPress.disabled;
+  //     }
+         
+  //     }
+  // };
+
+    
+  //   window.addEventListener("keydown", function (event) {
+  //     if (event.defaultPrevented) {
+  //       return; // Should do nothing if the default action has been cancelled
+  //     }
+    
+  //     var handled = false;
+  //     if (event. !== undefined) {
+  //       // Handle the event with KeyboardEvent.key and set handled true.
+  //     } else if (event.Space !== undefined) {
+  //       // Handle the event with KeyboardEvent.keyIdentifier and set handled true.
+  //     } else if (event.Space !== undefined) {
+  //       // Handle the event with KeyboardEvent.keyCode and set handled true.
+  //     }
+    
+  //     if (handled) {
+  //       // Suppress "double action" if event handled
+  //       event.preventDefault();
+  //     }
+  //   }, true);
+  
+   
+
+
+  //   function DisabledKey1(e) { 
+  //     var e = window.event||e; // Handle browser compatibility
+  //     var keyID = e.space;
+  //     //space pressed
+  //     if (keyID == 32) {
+  //         e.preventDefault(); // Prevent the default action
+  //         // anotherFunction();
+  //     }
+  // }
+   
+   
+    // function DisableKeys(  : "Space" )
+    // {
+    //    if( Event.current.keyCode == " "  ( Event.current.type == EventType.KeyUp || Event.current.type == EventType.KeyDown ) )
+    //    {
+    //       Event.current.Use();
+    //    }
+    // }
+  
+    // function OnGUI()
+    // {
+    //    DisableKeys( KeyCode.Space );
+    // }
+ 
+  
 
 
 

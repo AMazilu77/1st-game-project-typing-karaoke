@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -16,10 +17,10 @@
  
 
     <div class="imgclass"> 
-
-        <button id="accepted" onclick="introMusic()"> Accept Challenge </button>
-        <audio autoplay>
-          <source src="/Sounds-For-Game/SF2 intro.mp3"  type="audio/mpeg">
+        <!-- onclick="introMusic()" -->
+        <button id="accepted"> Accept Challenge </button>
+        <audio>
+          <source src="../Sounds-For-Game/SF2 intro.mp3"  type="audio/mpeg">
                      If you're reading this, audio isn't supported. 
          </audio>
 
@@ -58,12 +59,16 @@
               
             <button id="start-button" onclick="startGame()">  Ready?  </button>
               <div id="player">
-              <audio autoplay>
+              <audio>
                <source src="/Sounds-For-Game/Rick Astley - Never Gonna Give You Up (1).mp3"  type="audio/mpeg">
                           If you're reading this, audio isn't supported. 
               </audio>
           </div>
-              <div class ="timespace"> Time left:  <p class="timer">  </p>  </div>
+          <div class="player-words"> Player 1 lyrics: <p id="words"> </p>
+            <textarea id="thebox" type="text" value=" TYPE HERE" method="get">   </textarea>
+           
+          
+          <div class ="timespace"> Time left:  <p class="timer">  </p>  </div>
                   
                 
                 
@@ -72,9 +77,21 @@
                     
                 
 
-                <div class="player-words"> Player 1 lyrics: <p id="words"> </p> </div>  
+               
+                
+                <!-- <script> $("input")
+                .keypress(function()) {
+                  var value = $(this).val();
+                  $("p").text( value ); 
+                })
+                .keypress(); 
+
+                </script>  -->
+                </div>  
               
-    
+    <audio>
+      <source src="">
+    </audio>
                 
 
     <script src="Game-index.js"></script>
